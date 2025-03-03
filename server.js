@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
-const PORT = 3000;
+
+// Використовуємо порт, наданий DigitalOcean, або 3000 за замовчуванням
+const PORT = process.env.PORT || 3000;
 
 // Налаштування EJS
 app.set("view engine", "ejs");
@@ -15,5 +17,5 @@ app.get("/", (req, res) => {
 
 // Запуск сервера
 app.listen(PORT, () => {
-    console.log(`Сервер працює на http://localhost:${PORT}`);
+    console.log(`✅ Сервер працює на http://0.0.0.0:${PORT}`);
 });
